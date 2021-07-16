@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Schema;
 
 class CreateTravelsTable extends Migration
@@ -16,11 +15,11 @@ class CreateTravelsTable extends Migration
     {
         Schema::create('travels', function (Blueprint $table) {
             $table->id();
-            $table->string('luogo', 50);
-            $table->text('descrzione')->nullable();
+            $table->string('title', 100);
+            $table->text('desc')->nullable();
             $table->string('image')->nullable();
+            $table->integer('vote');
             $table->decimal('price', 6, 2);
-            $table->integer('vote')->nullable();
             $table->timestamps();
         });
     }

@@ -9,9 +9,12 @@ class TravelController extends Controller
 {
     public function index()
     {
-        //$travels = ;
-        //$travels = Travel::all();
-        dd(Travel::all());
-        return view('travels.index');
+        $travels = Travel::all();
+        
+        return view('travels.index', compact('travels'));
+    }
+    public function show()
+    {
+        return view('travels.show');
     }
 }
